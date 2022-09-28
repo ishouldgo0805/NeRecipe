@@ -25,6 +25,7 @@ import ru.netology.nerecipe.utils.hideKeyboard
 
 class NewRecipeFragment : Fragment() {
 
+
     private val viewModel by activityViewModels<RecipeViewModel>()
 
     private val pickStepImgActivityResultLauncher =
@@ -58,6 +59,7 @@ class NewRecipeFragment : Fragment() {
     ): View {
         return FragmentRecipeNewBinding.inflate(layoutInflater, container, false).also { binding ->
             with(binding) {
+
 
                 val currentNewRecipe = MutableLiveData(
                     Recipe(
@@ -176,7 +178,7 @@ class NewRecipeFragment : Fragment() {
                     if (
                         !newRecipeNameEditText.text.isNullOrBlank() &&
                         ingredients.isNotEmpty() &&
-                        steps.isNotEmpty()
+                        steps.isNotEmpty() && categories.isNotEmpty()
                     ) {
                         currentNewRecipe.value = currentNewRecipe.value?.copy(
                             title = newRecipeNameEditText.text.toString()
@@ -199,6 +201,10 @@ class NewRecipeFragment : Fragment() {
                         newRecipeStepsEditText.requestFocus()
                         newRecipeStepsEditText.error =
                             resources.getString(R.string.error_empty_steps)
+                    } else if (categories.isNullOrEmpty()) {
+                        newRecipeCategoriesWordTextView.requestFocus()
+                        newRecipeCategoriesWordTextView.error =
+                            resources.getString(R.string.error_empty_tags)
                     }
                 }
             }

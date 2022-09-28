@@ -69,4 +69,5 @@
     <string name="error_empty_time">Введите время приготовления!</string>
     <string name="error_empty_ingredients">Рецепт должен содержать минимум один ингредиент!</string>
     <string name="error_empty_steps">Рецепт должен содержать минимум один шаг!</string>
+    <string name="error_empty_tags">Рецепт должен содержать минимум один тег!</string>
 </resources>

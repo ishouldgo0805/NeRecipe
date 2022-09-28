@@ -25,7 +25,6 @@ class RecipeFragment : Fragment() {
 
     private lateinit var recipe: Recipe
 
-    // region Menu
     @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.recipe_options_menu, menu)
@@ -51,7 +50,6 @@ class RecipeFragment : Fragment() {
             else -> false
         }
     }
-    // endregion Menu
 
 
     override fun onCreateView(
